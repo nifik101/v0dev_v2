@@ -64,11 +64,4 @@ export const sv: Content = {
       },
     ],
   },
-  blog: {
-    title: "Insikter & Reflektioner",
-    description: "Utforska mina senaste tankar om affärsutveckling, ledarskap och teknologi.",
-  },
-  contact: {
-    title: "Kontakta mig",
-  },
 }
