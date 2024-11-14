@@ -3,10 +3,8 @@
 import { motion, useScroll, useTransform, useSpring } from "framer-motion"
 import { useRef } from "react"
 import { ChevronDown } from "lucide-react"
-import { useLanguage } from "@/hooks/useLanguage"
 
 export function Hero() {
-  const { t } = useLanguage();
   const targetRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: targetRef,

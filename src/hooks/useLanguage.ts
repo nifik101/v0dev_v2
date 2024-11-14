@@ -4,21 +4,23 @@ import { useState, useCallback, useEffect } from "react"
 import type { Content } from "@/types/types"
 import { content } from "@/content"
 
+const DEFAULT_LANGUAGE = "sv"
+
 export function useLanguage() {
-  const [lang, setLang] = useState<"sv" | "en">(() => {
-    // Try to get the stored language preference, default to "sv"
-    if (typeof window !== "undefined") {
-      return (localStorage.getItem("language") as "sv" | "en") || "sv"
+  const [lang, setLang] = useState<"sv" | "en">(DEFAULT_LANGUAGE)
+
+  useEffect(() => {
+    // Only update language from localStorage after initial render
+    const storedLang = localStorage.getItem("language") as "sv" | "en"
+    if (storedLang) {
+      setLang(storedLang)
     }
-    return "sv"
-  })
+  }, [])
 
   const toggleLanguage = useCallback(() => {
     setLang((prevLang) => {
       const newLang = prevLang === "sv" ? "en" : "sv"
-      if (typeof window !== "undefined") {
-        localStorage.setItem("language", newLang)
-      }
+      localStorage.setItem("language", newLang)
       return newLang
     })
   }, [])
