@@ -1,6 +1,6 @@
-'use client'
+"use client"
 
-import { Content } from '../../types/types'
+import type { Content } from "@/types/types"
 
 export const sv: Content = {
   nav: {

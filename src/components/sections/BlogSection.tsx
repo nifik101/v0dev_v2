@@ -1,9 +1,9 @@
 'use client'
 
 import { Card, CardContent } from "@/components/ui/card"
-import { Section } from "./layout/Section"
-import { useLanguage } from "../hooks/useLanguage"
-import { BlogPost } from "../types"
+import { Section } from "@/components/layout/Section"
+import { useLanguage } from "@/hooks/useLanguage"
+import { type BlogPost } from "@/types/types"
 
 const blogPosts: BlogPost[] = [
   { title: "The Future of Remote Work", date: "2023-05-15" },

@@ -1,8 +1,10 @@
-'use client'
+"use client"
 
-export const post = {
-  id: 'post-1',
-  date: '2024-03-20',
+import type { BlogPost } from "@/types/types"
+
+export const post: BlogPost = {
+  id: "post-1",
+  date: "2024-03-20",
   en: {
     title: "The Future of Remote Work",
     description: "Exploring the trends and challenges...",

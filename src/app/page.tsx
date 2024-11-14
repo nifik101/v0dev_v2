@@ -1,13 +1,13 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Header } from "../components/layout/Header"
-import { Hero } from "../components/Hero"
-import { About } from "../components/About"
-import { Projects } from "../components/Projects"
-import { Skills } from "../components/Skills"
-import { BlogSection } from "../components/BlogSection"
-import { Contact } from "../components/Contact"
-import { useLanguage } from "../hooks/useLanguage"
+import { Header } from "@/components/layout/Header"
+import { Hero } from "@/components/sections/Hero"
+import { About } from "@/components/sections/About"
+import { Projects } from "@/components/sections/Projects"
+import { Skills } from "@/components/sections/Skills"
+import { BlogSection } from "@/components/sections/BlogSection"
+import { Contact } from "@/components/sections/Contact"
+import { useLanguage } from "@/hooks/useLanguage"
 
-// ... rest of the file remains the same 
+// Rest of the file remains the same

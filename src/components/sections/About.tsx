@@ -1,8 +1,8 @@
 'use client'
 
 import Image from "next/image"
-import { Section } from "./layout/Section"
-import { useLanguage } from "../hooks/useLanguage"
+import { Section } from "@/components/layout/Section"
+import { useLanguage } from "@/hooks/useLanguage"
 
 export function About() {
   const { t } = useLanguage();
