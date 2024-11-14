@@ -64,4 +64,11 @@ export const en: Content = {
       },
     ],
   },
+  blog: {
+    title: "Blog",
+    description: "Thoughts and insights about business, technology, and leadership",
+  },
+  contact: {
+    title: "Contact",
+  },
 }
