@@ -1,7 +1,7 @@
 'use client'
 
 import { Card, CardContent } from "@/components/ui/card"
-import { Section } from "./Section"
+import { Section } from "./layout/Section"
 import { useLanguage } from "../hooks/useLanguage"
 import { BlogPost } from "../types"
 

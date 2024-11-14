@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image"
-import { Section } from "./Section"
+import { Section } from "./layout/Section"
 import { useLanguage } from "../hooks/useLanguage"
 
 export function About() {
