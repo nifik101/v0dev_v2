@@ -1,8 +1,8 @@
 'use client'
 
 import { Card, CardContent } from "@/components/ui/card"
-import { Section } from "./layout/Section"
-import { useLanguage } from "../hooks/useLanguage"
+import { Section } from "@/components/layout/Section"
+import { useLanguage } from "@/hooks/useLanguage"
 
 export function Projects() {
   const { t } = useLanguage();

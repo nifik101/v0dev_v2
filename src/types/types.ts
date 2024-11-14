@@ -16,8 +16,18 @@ export interface SkillItem {
 }
 
 export interface BlogPost {
-  title: string;
+  id: string;
   date: string;
+  en: {
+    title: string;
+    description: string;
+    content: string;
+  };
+  sv: {
+    title: string;
+    description: string;
+    content: string;
+  };
 }
 
 export interface Content {

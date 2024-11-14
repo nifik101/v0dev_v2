@@ -2,8 +2,8 @@
 
 import { Button } from "@/components/ui/button"
 import { Mail, Linkedin, Github } from 'lucide-react'
-import { Section } from "./layout/Section"
-import { useLanguage } from "../hooks/useLanguage"
+import { Section } from "@/components/layout/Section"
+import { useLanguage } from "@/hooks/useLanguage"
 
 export function Contact() {
   const { t } = useLanguage();
