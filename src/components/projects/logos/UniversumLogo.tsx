@@ -1,3 +1,5 @@
+import { BaseLogo } from "./BaseLogo"
+
 interface UniversumLogoProps {
     className?: string;
     textColor?: string;
@@ -16,10 +18,17 @@ export function UniversumLogo({
     }
 }: UniversumLogoProps) {
     return (
-        <svg width="200" height="32" viewBox="0 0 200 32" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-            <g id="Property 1=Light bg">
-                <g id="Symbol">
-                    <path id="Vector" d="M12.6132 32L6.82364 28.3767L0.171072 20.2114L0 19.185L1.40894 12.2864L1.81451 6.03556L11.9231 0L19.9385 1.91062L27.6021 5.284L31.2581 16.5843L26.6449 27.7444L20.7304 30.3662L12.6132 32Z" fill="url(#paint0_radial_1306_5501)"/>
+        <BaseLogo className={className}>
+            <svg 
+                width="200" 
+                height="32" 
+                viewBox="0 0 200 32" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <g id="Property 1=Light bg">
+                    <g id="Symbol">
+                        <path id="Vector" d="M12.6132 32L6.82364 28.3767L0.171072 20.2114L0 19.185L1.40894 12.2864L1.81451 6.03556L11.9231 0L19.9385 1.91062L27.6021 5.284L31.2581 16.5843L26.6449 27.7444L20.7304 30.3662L12.6132 32Z" fill="url(#paint0_radial_1306_5501)"/>
                     <path id="Vector_2" style={{ mixBlendMode: "screen" }} d="M27.6021 5.284L19.9384 1.91062L11.9231 0L1.81445 6.03556L26.6448 27.7444L31.258 16.5843L27.6021 5.284Z" fill="url(#paint1_linear_1306_5501)"/>
                     <path id="Vector_3" style={{ mixBlendMode: "overlay" }} opacity="0.8" d="M27.6021 5.284L19.9384 1.91062L11.9231 0L1.81445 6.03556L26.6448 27.7444L31.258 16.5843L27.6021 5.284Z" fill="url(#paint2_linear_1306_5501)"/>
                     <path id="Vector_4" style={{ mixBlendMode: "multiply" }} opacity="0.5" d="M1.40894 12.2864L0 19.185L0.171072 20.2115L6.82364 28.3768L12.6132 32L20.7304 30.3662L26.6449 27.7444L1.81451 6.03558L1.40894 12.2864Z" fill="url(#paint3_linear_1306_5501)"/>
@@ -216,6 +225,7 @@ export function UniversumLogo({
                     <stop offset="1" stopColor="white" stopOpacity="0"/>
                 </linearGradient>
             </defs>
-        </svg>
+            </svg>
+        </BaseLogo>
     );
 }
