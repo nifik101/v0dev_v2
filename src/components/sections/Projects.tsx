@@ -3,18 +3,16 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Section } from "@/components/layout/Section"
 import { useLanguage } from "@/hooks/useLanguage"
-import { One2TelLogo, UniversumLogo } from "@/components/projects/logos"
+import { ProjectLogo } from "@/components/projects/logos"
 import { type ProjectItem } from "@/types/types"
 
 function ProjectCard({ project }: { project: ProjectItem }) {
-  const isOne2Tel = project.title.toLowerCase().includes('one2tel');
-  const isUniversum = project.title.toLowerCase().includes('universum');
+  const logoName = project.title.toLowerCase().replace(/\s+/g, '');
 
   return (
     <Card className="overflow-hidden">
       <CardContent className="p-6">
-        {isOne2Tel && <One2TelLogo className="mb-4" />}
-        {isUniversum && <UniversumLogo className="mb-4" />}
+        <ProjectLogo name={logoName} className="mb-4" />
         <h3 className="mb-2 text-xl font-bold">{project.title}</h3>
         <p className="text-muted-foreground">{project.description}</p>
       </CardContent>
