@@ -10,7 +10,7 @@ import {
   FaMobile, 
   FaCloud 
 } from 'react-icons/fa'
-import Image from 'next/image';
+import NextImage from 'next/image';
 
 // Define a type for different icon sources
 type IconSource = {
@@ -37,10 +37,18 @@ function SkillIcon({ source, className = "w-8 h-8 mb-4 text-primary" }: {
       const IconComponent = source.icon as IconType;
       return <IconComponent className={className} />;
     case 'svg':
-      return <img src={source.icon as string} className={className} alt={source.alt} />;
+      return (
+        <NextImage 
+          src={source.icon as string} 
+          alt={source.alt || ''} 
+          width={32} 
+          height={32} 
+          className={className}
+        />
+      );
     case 'image':
       return (
-        <Image 
+        <NextImage 
           src={source.icon as string} 
           alt={source.alt || ''} 
           width={32} 

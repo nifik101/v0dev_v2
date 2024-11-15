@@ -4,8 +4,9 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Section } from "@/components/layout/Section"
 import { useLanguage } from "@/hooks/useLanguage"
 import { One2TelLogo, UniversumLogo } from "@/components/projects/logos"
+import { type ProjectItem } from "@/types/types"
 
-function ProjectCard({ project, index }: { project: any, index: number }) {
+function ProjectCard({ project }: { project: ProjectItem }) {
   const isOne2Tel = project.title.toLowerCase().includes('one2tel');
   const isUniversum = project.title.toLowerCase().includes('universum');
 
@@ -28,8 +29,8 @@ export function Projects() {
     <Section id="projects">
       <h2 className="mb-12 text-3xl font-bold">{t.projects.title}</h2>
       <div className="grid gap-6 md:grid-cols-2">
-        {t.projects.items.map((project, index) => (
-          <ProjectCard key={index} project={project} index={index} />
+        {t.projects.items.map((project) => (
+          <ProjectCard key={project.title} project={project} />
         ))}
       </div>
     </Section>

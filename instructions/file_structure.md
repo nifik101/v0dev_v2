@@ -2,7 +2,9 @@ root/
 ├── .next/                      # Next.js build directory (generated)
 ├── node_modules/               # Dependencies (generated)
 ├── public/                     # Public assets
-│   └── placeholder.svg
+│   ├── placeholder.svg
+│   └── images/                 # Image assets
+│       └── profile_image_1.jpeg
 ├── src/
 │   ├── app/
 │   │   ├── layout.tsx         # Root layout component
@@ -10,7 +12,13 @@ root/
 │   ├── components/
 │   │   ├── layout/
 │   │   │   ├── Header.tsx
-│   │   │   └── Section.tsx
+│   │   │   ├── Section.tsx
+│   │   │   └── ClientLayout.tsx
+│   │   ├── projects/
+│   │   │   └── logos/
+│   │   │       ├── index.ts
+│   │   │       ├── One2TelLogo.tsx
+│   │   │       └── UniversumLogo.tsx
 │   │   ├── sections/
 │   │   │   ├── About.tsx
 │   │   │   ├── BlogSection.tsx
@@ -26,7 +34,9 @@ root/
 │   ├── content/
 │   │   ├── blog/
 │   │   │   └── posts/
-│   │   │       └── post-1.ts
+│   │   │       ├── post-1.ts
+│   │   │       ├── post-2.ts
+│   │   │       └── post-3.ts
 │   │   ├── locales/
 │   │   │   ├── en.ts
 │   │   │   └── sv.ts
