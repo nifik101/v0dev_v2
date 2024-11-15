@@ -116,6 +116,13 @@ html {
   .body-base {
     @apply text-base md:text-lg leading-relaxed;
   }
+  
+  /* Enhanced hero text sizing */
+  .hero-text {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
 }
 
 /* Smooth transitions */
@@ -147,5 +154,18 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Improved scroll indicator visibility */
+@media (max-height: 600px) {
+  .scroll-indicator {
+    bottom: 1rem;
+  }
+}
+
+@media (min-height: 800px) {
+  .scroll-indicator {
+    bottom: 2rem;
   }
 }
