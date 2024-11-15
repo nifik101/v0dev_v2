@@ -2,16 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -41,33 +31,114 @@ body {
     --radius: 0.5rem;
     --container-width: 80rem;
     --section-padding: clamp(3rem, 10vw, 8rem);
+    --container-width-mobile: 100%;
+    --container-width-tablet: 90%;
+    --container-width-desktop: 80rem;
+    --container-padding-mobile: 1rem;
+    --container-padding-tablet: 2rem;
+    --container-padding-desktop: 2.5rem;
+    --font-size-base-mobile: 16px;
+    --font-size-base-desktop: 18px;
+    --line-height-base: 1.5;
   }
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 240 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+}
+
+/* Base responsive styles */
+html {
+  font-size: var(--font-size-base-mobile);
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: var(--font-size-base-desktop);
   }
+}
+
+/* Responsive container */
+.container {
+  width: var(--container-width-mobile);
+  padding-left: var(--container-padding-mobile);
+  padding-right: var(--container-padding-mobile);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .container {
+    width: var(--container-width-tablet);
+    padding-left: var(--container-padding-tablet);
+    padding-right: var(--container-padding-tablet);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: var(--container-width-desktop);
+    padding-left: var(--container-padding-desktop);
+    padding-right: var(--container-padding-desktop);
+  }
+}
+
+/* Responsive utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Responsive spacing utilities */
+  .section-spacing {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+  
+  .content-spacing {
+    @apply space-y-6 md:space-y-8 lg:space-y-10;
+  }
+  
+  /* Responsive typography utilities */
+  .heading-1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight;
+  }
+  
+  .heading-2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight;
+  }
+  
+  .heading-3 {
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold;
+  }
+  
+  .body-large {
+    @apply text-lg md:text-xl leading-relaxed;
+  }
+  
+  .body-base {
+    @apply text-base md:text-lg leading-relaxed;
+  }
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Better touch handling for mobile */
+@media (hover: none) {
+  .hover\:scale-105 {
+    transform: none !important;
+  }
+}
+
+/* Improved mobile tap targets */
+button, 
+a {
+  @apply min-h-[44px] min-w-[44px];
+}
+
+/* Prevent layout shift on mobile */
+body {
+  overflow-y: scroll;
 }
 
 @layer base {
@@ -77,16 +148,4 @@ body {
   body {
     @apply bg-background text-foreground;
   }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.container {
-  max-width: var(--container-width);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: clamp(1rem, 5vw, 2rem);
-  padding-right: clamp(1rem, 5vw, 2rem);
 }
