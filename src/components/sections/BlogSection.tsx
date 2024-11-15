@@ -31,6 +31,9 @@ export function BlogSection() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 192px"
+                  onError={(e) => {
+                    e.currentTarget.src = '/images/fallback.jpg'
+                  }}
                 />
               </div>
               <div>
