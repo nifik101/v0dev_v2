@@ -1,5 +1,6 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import { type ReactNode } from 'react'
 
 interface SectionProps {
@@ -10,8 +11,15 @@ interface SectionProps {
 
 export function Section({ id, className = '', children }: SectionProps) {
   return (
-    <section id={id} className={`py-20 ${className}`}>
+    <motion.section
+      id={id}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.5 }}
+      className={`py-[var(--section-padding)] container ${className}`}
+    >
       {children}
-    </section>
+    </motion.section>
   )
 }
