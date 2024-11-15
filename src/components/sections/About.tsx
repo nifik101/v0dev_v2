@@ -17,7 +17,7 @@ export function About() {
         </div>
         <div className="relative aspect-square overflow-hidden rounded-xl bg-muted">
           <Image
-            src="/placeholder.svg"
+            src="/images/profile_image_1.jpeg"
             alt="Jonas Norlander"
             fill
             className="object-cover"

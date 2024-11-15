@@ -1,29 +1,43 @@
 'use client'
 
+import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Section } from "@/components/layout/Section"
 import { useLanguage } from "@/hooks/useLanguage"
 import { type BlogPost } from "@/types/types"
+// Import blog posts
+import { post as post1 } from "@/content/blog/posts/post-1"
+import { post as post2 } from "@/content/blog/posts/post-2"
+import { post as post3 } from "@/content/blog/posts/post-3"
 
-const blogPosts: BlogPost[] = [
-  { title: "The Future of Remote Work", date: "2023-05-15" },
-  { title: "Effective Leadership in the Digital Age", date: "2023-06-02" },
-  { title: "Optimizing Business Processes with AI", date: "2023-06-20" },
-]
+// Combine all posts in an array
+const blogPosts: BlogPost[] = [post1, post2, post3]
 
 export function BlogSection() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
   return (
     <Section id="blog">
       <h2 className="mb-6 text-3xl font-bold">{t.blog.title}</h2>
       <p className="mb-12 text-xl text-muted-foreground">{t.blog.description}</p>
       <div className="space-y-6">
-        {blogPosts.map((post, index) => (
-          <Card key={index}>
-            <CardContent className="p-6">
-              <h3 className="mb-2 text-xl font-bold">{post.title}</h3>
-              <p className="text-sm text-muted-foreground">{post.date}</p>
+        {blogPosts.map((post) => (
+          <Card key={post.id}>
+            <CardContent className="p-6 flex gap-6">
+              <div className="relative w-48 h-32 flex-shrink-0 overflow-hidden rounded-lg">
+                <Image
+                  src={post.image.src}
+                  alt={post.image.alt[lang]}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 192px"
+                />
+              </div>
+              <div>
+                <h3 className="mb-2 text-xl font-bold">{post[lang].title}</h3>
+                <p className="mb-2 text-muted-foreground">{post[lang].description}</p>
+                <p className="text-sm text-muted-foreground">{post.date}</p>
+              </div>
             </CardContent>
           </Card>
         ))}

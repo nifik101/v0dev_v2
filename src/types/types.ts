@@ -18,6 +18,13 @@ export interface SkillItem {
 export interface BlogPost {
   id: string;
   date: string;
+  image: {
+    src: string;
+    alt: {
+      en: string;
+      sv: string;
+    };
+  };
   en: {
     title: string;
     description: string;
