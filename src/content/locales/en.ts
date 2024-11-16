@@ -34,8 +34,8 @@ export const en: Content = {
         description: "As COO, I led a 300% growth through mergers and organic expansion. I created a scalable structure and significantly increased profitability through strategic efficiency. This work has been a major part of my journey in leadership and business development.",
       },
       {
-        title: "JF Bags - Building and Running a Retail Chain",
-        description: "Co-founder and CEO of a retail chain specializing in bags and travel accessories. Opened five stores across multiple locations and established a strong customer base with a range of high-quality products. The business was sold after being established in the market.",
+        title: "JF Retail - Building and Running a Retail Chain",
+        description: "Co-founder and CEO of a retail chain specializing in accessories and travel products. Opened five stores across multiple locations and established a strong customer base with a range of high-quality products. The business was sold after being established in the market.",
       },
       {
         title: "Future Media Group - Innovation in Franchise and Local Media",

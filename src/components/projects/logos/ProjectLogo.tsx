@@ -25,9 +25,8 @@ export function ProjectLogo({ name, className }: ProjectLogoProps): React.ReactE
     case 'universumcommunications':
     case 'universum':
       return <UniversumLogo className={className} />
-    case 'jfvaskor':
-    case 'jfväskor':
-      return <PlaceholderLogo text="JF Väskor" className={className} />
+    case 'jfretail':
+      return <PlaceholderLogo text="JF Retail" className={className} />
     case 'futuremediagroup':
       return <PlaceholderLogo text="Future Media Group" className={className} />
     default:

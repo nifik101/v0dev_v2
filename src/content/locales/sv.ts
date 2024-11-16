@@ -34,8 +34,8 @@ export const sv: Content = {
         description: "Som COO ledde jag en 300%-ig tillväxt genom fusioner och organisk expansion. Jag skapade en skalbar struktur och ökade lönsamheten betydligt genom strategisk effektivisering. Detta arbete har varit en stor del i min resa inom ledarskap och affärsutveckling.",
       },
       {
-        title: "JF Väskor – Bygga och Driva Retailkedja",
-        description: "Medgrundare och VD för en butikskedja inom väsk- och reseaccessoarer. Öppnade fem butiker över flera orter och etablerade en stark kundbas med ett utbud av högkvalitativa produkter. Verksamheten såldes vidare efter att ha etablerats på marknaden.",
+        title: "JF Retail – Bygga och Driva Butikskedja",
+        description: "Medgrundare och VD för en butikskedja inom accessoarer och reseprodukter. Öppnade fem butiker över flera orter och etablerade en stark kundbas med ett utbud av högkvalitativa produkter. Verksamheten såldes vidare efter att ha etablerats på marknaden.",
       },
       {
         title: "Future Media Group – Innovation inom Franchise och Lokal Media",

@@ -8,8 +8,8 @@ export const VALID_LOGO_NAMES = [
   'one2tel',
   'universum',
   'universumcommunications',
-  'project3',
-  'project4'
+  'jfretail',
+  'futuremediagroup'
 ] as const
 
 export type ValidLogoName = typeof VALID_LOGO_NAMES[number]
