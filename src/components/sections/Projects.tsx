@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Section } from "@/components/layout/Section"
-import { useLanguage } from "@/hooks/useLanguage"
+import { useLanguageContext } from "@/contexts/LanguageContext"
 import { ProjectLogo } from "@/components/projects/logos"
 import { type ProjectItem } from "@/types/types"
 
@@ -21,7 +21,7 @@ function ProjectCard({ project }: { project: ProjectItem }) {
 }
 
 export function Projects() {
-  const { t } = useLanguage();
+  const { t } = useLanguageContext();
 
   return (
     <Section id="projects">

@@ -6,7 +6,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Link from "next/link"
 import { type NavItem } from "@/types/types"
-import { useLanguage } from "@/hooks/useLanguage"
+import { useLanguageContext } from "@/contexts/LanguageContext"
 
 interface HeaderProps {
   isDark: boolean;
@@ -14,7 +14,7 @@ interface HeaderProps {
 }
 
 export function Header({ isDark, toggleDarkMode }: HeaderProps) {
-  const { lang, toggleLanguage, t } = useLanguage();
+  const { lang, toggleLanguage, t } = useLanguageContext();
 
   const navigation: NavItem[] = [
     { name: t.nav.home, href: "#home" },

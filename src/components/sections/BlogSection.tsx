@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Section } from "@/components/layout/Section"
-import { useLanguage } from "@/hooks/useLanguage"
+import { useLanguageContext } from "@/contexts/LanguageContext"
 import { type BlogPost } from "@/types/types"
 // Import blog posts
 import { post as post1 } from "@/content/blog/posts/post-1"
@@ -14,7 +14,7 @@ import { post as post3 } from "@/content/blog/posts/post-3"
 const blogPosts: BlogPost[] = [post1, post2, post3]
 
 export function BlogSection() {
-  const { t, lang } = useLanguage();
+  const { t, lang } = useLanguageContext();
 
   return (
     <Section id="blog">

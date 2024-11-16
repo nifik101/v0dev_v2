@@ -8,36 +8,58 @@ import { Projects } from "@/components/sections/Projects"
 import { Skills } from "@/components/sections/Skills"
 import { BlogSection } from "@/components/sections/BlogSection"
 import { Contact } from "@/components/sections/Contact"
+import { LanguageProvider } from "@/contexts/LanguageContext"
 
 export function ClientLayout() {
   const [isDark, setIsDark] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    // Check for dark mode preference
-    const isDarkMode = localStorage.getItem("darkMode") === "true"
-    setIsDark(isDarkMode)
-    if (isDarkMode) {
+    setMounted(true)
+    // Check system preference first
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    // Then check localStorage, fallback to system preference
+    const storedDarkMode = localStorage.getItem("darkMode")
+    const shouldBeDark = storedDarkMode !== null ? storedDarkMode === "true" : systemPrefersDark
+    
+    setIsDark(shouldBeDark)
+    if (shouldBeDark) {
       document.documentElement.classList.add("dark")
+    } else {
+      document.documentElement.classList.remove("dark")
     }
   }, [])
 
   const toggleDarkMode = () => {
-    setIsDark(!isDark)
-    document.documentElement.classList.toggle("dark")
-    localStorage.setItem("darkMode", (!isDark).toString())
+    const newDarkMode = !isDark
+    setIsDark(newDarkMode)
+    localStorage.setItem("darkMode", newDarkMode.toString())
+    
+    if (newDarkMode) {
+      document.documentElement.classList.add("dark")
+    } else {
+      document.documentElement.classList.remove("dark")
+    }
+  }
+
+  // Avoid hydration mismatch
+  if (!mounted) {
+    return null
   }
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <Header isDark={isDark} toggleDarkMode={toggleDarkMode} />
-      <main className="flex-1">
-        <Hero />
-        <About />
-        <Projects />
-        <Skills />
-        <BlogSection />
-        <Contact />
-      </main>
-    </div>
+    <LanguageProvider>
+      <div className="flex min-h-screen flex-col bg-background text-foreground">
+        <Header isDark={isDark} toggleDarkMode={toggleDarkMode} />
+        <main className="flex-1">
+          <Hero />
+          <About />
+          <Projects />
+          <Skills />
+          <BlogSection />
+          <Contact />
+        </main>
+      </div>
+    </LanguageProvider>
   )
 } 

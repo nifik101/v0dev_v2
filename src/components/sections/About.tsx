@@ -2,10 +2,10 @@
 
 import Image from "next/image"
 import { Section } from "@/components/layout/Section"
-import { useLanguage } from "@/hooks/useLanguage"
+import { useLanguageContext } from "@/contexts/LanguageContext"
 
 export function About() {
-  const { t } = useLanguage();
+  const { t } = useLanguageContext();
 
   return (
     <Section id="about">

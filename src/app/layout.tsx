@@ -14,8 +14,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html>
-      <body className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${GeistSans.variable} ${GeistMono.variable} antialiased bg-background text-foreground`}>
         {children}
       </body>
     </html>

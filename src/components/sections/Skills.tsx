@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Section } from "@/components/layout/Section"
-import { useLanguage } from "@/hooks/useLanguage"
+import { useLanguageContext } from "@/contexts/LanguageContext"
 import { IconType } from 'react-icons';
 import { 
   FaCode, 
@@ -62,7 +62,7 @@ function SkillIcon({ source, className = "w-8 h-8 mb-4 text-primary" }: {
 }
 
 export function Skills() {
-  const { t } = useLanguage();
+  const { t } = useLanguageContext();
 
   return (
     <Section id="skills">

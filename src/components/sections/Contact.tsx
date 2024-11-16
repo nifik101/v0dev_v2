@@ -3,10 +3,10 @@
 import { Button } from "@/components/ui/button"
 import { Mail, Linkedin, Github } from 'lucide-react'
 import { Section } from "@/components/layout/Section"
-import { useLanguage } from "@/hooks/useLanguage"
+import { useLanguageContext } from "@/contexts/LanguageContext"
 
 export function Contact() {
-  const { t } = useLanguage();
+  const { t } = useLanguageContext();
 
   return (
     <Section id="contact">
