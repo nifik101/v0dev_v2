@@ -1,9 +1,3 @@
-import React from 'react'
-import { One2TelLogo } from './One2TelLogo'
-import { UniversumLogo } from './UniversumLogo'
-import { PlaceholderLogo } from './PlaceholderLogo'
-import { ProjectLogo } from './ProjectLogo'
-
 export const VALID_LOGO_NAMES = [
   'one2tel',
   'universum',

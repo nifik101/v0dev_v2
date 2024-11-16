@@ -20,25 +20,6 @@ export function Hero() {
     stiffness: 100
   })
 
-  const blackOpacity = useTransform(scrollYProgress, [0.15, 0.2], [0, 1])
-  const fadeOutBlack = useTransform(scrollYProgress, [0.2, 0.25], [1, 0])
-  const smoothBlackOpacity = useSpring(blackOpacity, {
-    damping: 15,
-    stiffness: 100
-  })
-
-  const scrollIndicatorColor = useTransform(
-    scrollYProgress,
-    [0, 0.2, 0.3],
-    ["#000", "#000", "#fff"]
-  )
-  
-  const scrollIndicatorOpacity = useTransform(
-    scrollYProgress,
-    [0, 0.1, 0.15],
-    [1, 1, 0]
-  )
-
   return (
     <div ref={targetRef} className="h-[120vh] bg-white">
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
@@ -76,7 +57,11 @@ export function Hero() {
             ease: "easeInOut"
           }}
           style={{
-            opacity: scrollIndicatorOpacity
+            opacity: useTransform(
+              scrollYProgress,
+              [0, 0.1, 0.15],
+              [1, 1, 0]
+            )
           }}
         >
           <motion.div 
@@ -88,7 +73,11 @@ export function Hero() {
             <motion.div 
               className="h-8 w-8"
               style={{
-                color: scrollIndicatorColor
+                color: useTransform(
+                  scrollYProgress,
+                  [0, 0.2, 0.3],
+                  ["#000", "#000", "#fff"]
+                )
               }}
             >
               <ChevronDown className="h-full w-full" />
