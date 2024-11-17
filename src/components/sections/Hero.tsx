@@ -24,14 +24,14 @@ export function Hero() {
     <div ref={targetRef} className="h-[120vh] bg-white">
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
         <motion.div
-          className="text-black text-center px-4"
+          className="text-black text-center px-8 md:px-4 max-w-[90vw] md:max-w-none"
           style={{
             scale: smoothTextScale,
             opacity: smoothTextOpacity
           }}
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-            Jonas Norlander
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight [text-wrap:balance]">
+            Jonas<br className="md:hidden" /> Norlander
           </h1>
         </motion.div>
         <motion.div
