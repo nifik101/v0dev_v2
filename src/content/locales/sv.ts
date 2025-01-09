@@ -27,7 +27,7 @@ export const sv: Content = {
     items: [
       {
         title: "Universum Communications – Globalt Ledarskap i Finansiella Processer",
-        description: "Business Controller och Interim Head of Controller med ansvar för att optimera interna styrsystem och minska finansiella risker. Implementerade ett faktureringssystem som minskade DSO med 80%, vilket förbättrade kassaflödet och ökad effektivitet.",
+        description: "Business Controller med ansvar för att optimera interna styrsystem och minska finansiella risker. Implementerade ett faktureringssystem som minskade DSO med 80%, vilket förbättrade kassaflödet och ökad effektivitet.",
       },
       {
         title: "One2tel – Skalbar Tillväxt inom Telekom",

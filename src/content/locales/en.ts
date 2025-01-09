@@ -27,7 +27,7 @@ export const en: Content = {
     items: [
       {
         title: "Universum Communications - Global Leadership in Financial Processes",
-        description: "Business Controller and Interim Head of Controller responsible for optimizing internal control systems and reducing financial risks. Implemented a billing system that reduced DSO by 80%, improving cash flow and increasing efficiency.",
+        description: "Business Controller with responsible for optimizing internal control systems and reducing financial risks. Implemented a billing system that reduced DSO by 80%, improving cash flow and increasing efficiency.",
       },
       {
         title: "One2tel - Scalable Growth in Telecom",
