@@ -6,7 +6,7 @@ import { Hero } from "@/components/sections/Hero"
 import { About } from "@/components/sections/About"
 import { Projects } from "@/components/sections/Projects"
 import { Skills } from "@/components/sections/Skills"
-import { BlogSection } from "@/components/sections/BlogSection"
+// import { BlogSection } from "@/components/sections/BlogSection" 
 import { Contact } from "@/components/sections/Contact"
 import { LanguageProvider } from "@/contexts/LanguageContext"
 
@@ -56,10 +56,10 @@ export function ClientLayout() {
           <About />
           <Projects />
           <Skills />
-          <BlogSection />
+          {/* <BlogSection /> */}
           <Contact />
         </main>
       </div>
     </LanguageProvider>
   )
-} 
+}
